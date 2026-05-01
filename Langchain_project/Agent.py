@@ -14,21 +14,7 @@ llm=init_chat_model(
     api_key=os.getenv("Groq_Api")
     )
 
-@tool
-def get_Sunbeam_data_tool(query: str):
-        """ this tool gets  Sunbeam related data from the knowledge base. so any query related to Sunbeam can be answered using this tool.
-        also if the question are related to any course(Apache Spark Mastery - Data Engineering With PySpark ,Aptitude ,C++ ,Core Java 
-        ,Data Structures And Algorithms,Dev Ops ,Dream LLM ,Machine Learning ,Mastering GenAI ,Mastering MCQs ,MERN (FULL-STACK) DEVELOPMENT 
-        ,MLOps & LLMOps ,Python Development etc) , internship , placement , pre-cat or contact details of Sunbeam then this tool can be used to get the answers.
-        Input : A query related to Sunbeam in  a string format
-        Output : Relevant information from Sunbeam knowledge base in string format
-        Error Handling : If any error occurs during the process, it returns an error message.
-        note: 1)if the user asks question where u need more than one info then divide the query into multiple sub-queries and call this tool multiple times with those sub-queries and then combine the answers and give it to the user.
-              2) if the question is related like what is sunbeam then change it to tell about sunbeam 
-              3) if the user asks about location , contact details then the query must be like "tell me the contact details of sunbeam"  etc
-        """
-        return get_Sunbeam_data(query)
-@tool
+
 def get_file_contain_tool_by_path(file_path):
     '''
      this tool is use to get file detials when a user gives path of the file note it can only acess .csv files nothing else
